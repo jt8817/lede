@@ -53,10 +53,8 @@ jobs:
           sudo -E apt-get clean
           
       - name: 同步最新的源碼
-        run: |
-          git remote add openwrt https://github.com/coolsnowwolf/lede.git
-          git pull openwrt master
-          git remote -v
+        run: | 
+          git pull origin master --allow-unrelated-histories
 
       - name: Update feeds
         run: |
